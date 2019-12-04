@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="179" id="KGk-i7-Jjw" customClass="CharacterCell" customModule="Marvel" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="522" height="179"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="522" height="178.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OjZ-ZF-7x8">
+                        <rect key="frame" x="0.0" y="1" width="522" height="178"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="DtM-Z2-4Gm">
+                                <rect key="frame" x="0.0" y="0.0" width="522" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="lHU-bQ-3Oo"/>
+                                </constraints>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NvA-Xq-0aJ">
+                                <rect key="frame" x="40" y="130.5" width="150" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parallelogram" translatesAutoresizingMaskIntoConstraints="NO" id="aMf-C8-wpW">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3-D man 3-D man" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="qkH-0r-s5i">
+                                        <rect key="frame" x="10" y="0.0" width="130" height="30"/>
+                                        <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qkH-0r-s5i" firstAttribute="centerY" secondItem="NvA-Xq-0aJ" secondAttribute="centerY" id="BR9-r4-qz8"/>
+                                    <constraint firstAttribute="width" constant="150" id="IHw-G3-Y26"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ooj-0C-RJM"/>
+                                    <constraint firstItem="aMf-C8-wpW" firstAttribute="leading" secondItem="NvA-Xq-0aJ" secondAttribute="leading" id="UwY-Jd-Bu2"/>
+                                    <constraint firstItem="qkH-0r-s5i" firstAttribute="centerX" secondItem="NvA-Xq-0aJ" secondAttribute="centerX" id="WxP-aj-xbw"/>
+                                    <constraint firstItem="qkH-0r-s5i" firstAttribute="leading" secondItem="NvA-Xq-0aJ" secondAttribute="leading" constant="10" id="ZFp-Ng-8Vw"/>
+                                    <constraint firstItem="aMf-C8-wpW" firstAttribute="top" secondItem="NvA-Xq-0aJ" secondAttribute="top" id="bvu-aV-IRJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="qkH-0r-s5i" secondAttribute="bottom" id="jxK-BA-TxN"/>
+                                    <constraint firstAttribute="trailing" secondItem="qkH-0r-s5i" secondAttribute="trailing" constant="10" id="k65-1i-rFT"/>
+                                    <constraint firstAttribute="bottom" secondItem="aMf-C8-wpW" secondAttribute="bottom" id="kIG-r4-5gC"/>
+                                    <constraint firstItem="qkH-0r-s5i" firstAttribute="top" secondItem="NvA-Xq-0aJ" secondAttribute="top" id="mLw-aS-K9E"/>
+                                    <constraint firstAttribute="trailing" secondItem="aMf-C8-wpW" secondAttribute="trailing" id="sQR-xJ-8Jc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DtM-Z2-4Gm" firstAttribute="top" secondItem="OjZ-ZF-7x8" secondAttribute="top" id="3Er-Yw-hNT"/>
+                            <constraint firstItem="NvA-Xq-0aJ" firstAttribute="leading" secondItem="OjZ-ZF-7x8" secondAttribute="leading" constant="40" id="C0M-8B-Ljf"/>
+                            <constraint firstAttribute="trailing" secondItem="DtM-Z2-4Gm" secondAttribute="trailing" id="Gk9-dP-OEz"/>
+                            <constraint firstItem="DtM-Z2-4Gm" firstAttribute="leading" secondItem="OjZ-ZF-7x8" secondAttribute="leading" id="Pmn-6L-Tfq"/>
+                            <constraint firstAttribute="bottom" secondItem="NvA-Xq-0aJ" secondAttribute="bottom" constant="20" id="fFg-MH-SjV"/>
+                            <constraint firstAttribute="bottom" secondItem="DtM-Z2-4Gm" secondAttribute="bottom" id="hIY-xo-ZvH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OjZ-ZF-7x8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="LNT-mR-kkp"/>
+                    <constraint firstItem="OjZ-ZF-7x8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sbK-FW-qd0"/>
+                    <constraint firstAttribute="bottom" secondItem="OjZ-ZF-7x8" secondAttribute="bottom" id="u7D-CA-jab"/>
+                    <constraint firstAttribute="trailing" secondItem="OjZ-ZF-7x8" secondAttribute="trailing" id="zBk-L9-65s"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="charcterImageView" destination="DtM-Z2-4Gm" id="rZ4-ek-Pyh"/>
+                <outlet property="charcterNameLabel" destination="qkH-0r-s5i" id="FlR-09-2Oh"/>
+            </connections>
+            <point key="canvasLocation" x="269.56521739130437" y="-21.763392857142858"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="marvel" width="260" height="105"/>
+        <image name="parallelogram" width="331" height="139"/>
+    </resources>
+</document>

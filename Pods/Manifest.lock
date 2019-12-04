@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CCBottomRefreshControl (0.5.2)
+  - GSMessages (1.7.2)
+  - LetheStretchyHeader (0.1.0)
+  - Nuke (8.3.1)
+  - Realm (3.20.0):
+    - Realm/Headers (= 3.20.0)
+  - Realm/Headers (3.20.0)
+  - RealmSwift (3.20.0):
+    - Realm (= 3.20.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CCBottomRefreshControl
+  - GSMessages
+  - LetheStretchyHeader
+  - Nuke (~> 8.0)
+  - RealmSwift
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CCBottomRefreshControl
+    - GSMessages
+    - LetheStretchyHeader
+    - Nuke
+    - Realm
+    - RealmSwift
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
+  GSMessages: 05bedc25bd278a1bf4260d6de526de0fc84cfef7
+  LetheStretchyHeader: 3b205a44f95310cd85673ceeeacf49c2ded955b2
+  Nuke: 85fb80f8df0cb26c28d2f4e0cb7fb93bcd6548d3
+  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
+  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 09506ccb1be2cab5a25ff8380d21715d67408267
+
+COCOAPODS: 1.8.3
