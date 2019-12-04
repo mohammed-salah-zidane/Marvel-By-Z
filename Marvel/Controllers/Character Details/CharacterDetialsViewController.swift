@@ -9,12 +9,6 @@
 import UIKit
 import LetheStretchyHeader
 
-
-let offset_HeaderStop:CGFloat = 45.0 // At this offset the Header stops its transformations
-let offset_B_LabelHeader:CGFloat = 100.0 // At this offset the Black label reaches the Header
-let distance_W_LabelHeader:CGFloat = 25.0 // The distance between the bottom of the Header and the top of the White Label
-
-
 class CharacterDetialsViewController: UIViewController {
     
     @IBOutlet weak var backButtonTop: NSLayoutConstraint!
@@ -39,33 +33,48 @@ class CharacterDetialsViewController: UIViewController {
     @IBOutlet weak var titleHeaderLabel: UILabel!
     
     
+    let offset_HeaderStop:CGFloat = 45.0 // At this offset the Header stops its transformations
+    let offset_B_LabelHeader:CGFloat = 100.0 // At this offset the Black label reaches the Header
+    let distance_W_LabelHeader:CGFloat = 25.0 // The distance between the bottom of the Header and the top of the White Label
+    
+    
     var characterImage:UIImage?
     var id:Int?
     var character:MarvelCharacter?
+    var isFromSearch:Bool!
+    
+    //MARK:- LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerCellNib(cellClass: CharctersSectionsCell.self)
         tableView.registerCellNib(cellClass: URLsCell.self)
-        //tableView.tableHeaderView = headerView
         updateUI()
-    }
+        //navigationController?.setNavigationBarHidden(true, animated: false)
+    }    
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
+    //MARK:- update ui with data
     func updateUI(){
         self.navigationItem.title = self.character?.name
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
         headerImageView.image = self.characterImage
         backgroundImageView.image = self.characterImage
-        
         if self.character != nil {
             if characterImage == nil{
                 headerImageView.nuke(url: self.character?.thumbnail!.url, {_ in })
@@ -75,42 +84,38 @@ class CharacterDetialsViewController: UIViewController {
             self.charcterNameLabel.text = self.character?.name ?? ""
         }
         setupAlterHeaderView()
-        
-        
     }
     
+    //MARK:- setup Alternative navigation header view
     func setupAlterHeaderView(){
         
+        //title label
         titleHeaderLabel.text = self.character?.name ?? ""
-        
         // Header - Image
         alterHeaderImageView?.image = self.characterImage
         alterHeaderImageView?.contentMode = .scaleAspectFill
         
         // Header - Blurred Image
-        
         self.headerImageView.image = self.characterImage
         self.headerBlurImageView.addBlur(1)
         headerBlurImageView?.contentMode = .scaleAspectFill
+        
+        // hide alter navigation bar
         alterHeaderImageView.alpha = 0
         headerBlurImageView?.alpha = 0.0
         alterNavigationView.alpha = 0
         alterNavigationView.clipsToBounds = true
-        
-        
-//        if Device.IS_IPHONE_X {
-//            alterNavHeight.constant = 120
-//            backButtonTop.constant = 43
-//            titleHeaderTop.constant = 117
-//
-//        }
+        if isFromSearch {
+            backButton.isHidden = true
+        }
     }
-    
+    //MARK:- Back button handler
     @IBAction func backButtonHandler(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
 }
+//MARK: - Conform TableView Delegate, Datasource
 extension CharacterDetialsViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -134,7 +139,6 @@ extension CharacterDetialsViewController:UITableViewDelegate,UITableViewDataSour
                 cell.sectionTitleLabel.text = "STORIES"
                 cell.characters = character?.stories?.items
                 cell.noDataText = "There is no available Stories"
-                
             case 3:
                 cell.sectionTitleLabel.text = "EVENTS"
                 cell.characters = character?.events?.items
@@ -153,6 +157,7 @@ extension CharacterDetialsViewController:UITableViewDelegate,UITableViewDataSour
     
     
 }
+//MARK: - Scrollview Delegate
 extension CharacterDetialsViewController: UIScrollViewDelegate {
     
     
@@ -173,46 +178,50 @@ extension CharacterDetialsViewController: UIScrollViewDelegate {
         } // SCROLL UP/DOWN ------------
             
         else {
-            
-            // Header -----------
-            
-            headerTransform = CATransform3DTranslate(headerTransform, 0, max(-offset_HeaderStop, -offset), 0)
-            
-            //  ------------ Label
-            
-            let labelTransform = CATransform3DMakeTranslation(0, max(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0)
-            titleHeaderLabel.layer.transform = labelTransform
-            
-            //  ------------ Blur
-            
-            headerBlurImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
-            alterHeaderImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
-            alterNavigationView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
-            
-            if offset <= offset_HeaderStop {
+            if !isFromSearch{
+                // Header -----------
                 
-                if headerImageView.layer.zPosition < alterNavigationView.layer.zPosition{
-                    alterNavigationView.layer.zPosition = 0
-                    alterNavHeight.constant = 107
-                    backButtonTop.constant = 30
-                    titleHeaderTop.constant = 104
-                    
-                }
+                headerTransform = CATransform3DTranslate(headerTransform, 0, max(-offset_HeaderStop, -offset), 0)
                 
-            }else {
-                if headerImageView.layer.zPosition >= alterNavigationView.layer.zPosition{
-                    alterNavigationView.layer.zPosition = 2
-                    backButton.layer.zPosition = 3
-                    alterNavHeight.constant = 120
-                    backButtonTop.constant = 43
-                    titleHeaderTop.constant = 117
+                //  ------------ Label
+                
+                let labelTransform = CATransform3DMakeTranslation(0, max(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0)
+                titleHeaderLabel.layer.transform = labelTransform
+                
+                //  ------------ Blur
+                
+                
+                headerBlurImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
+                alterHeaderImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
+                alterNavigationView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
+                
+                
+                
+                if offset <= offset_HeaderStop {
                     
+                    if headerImageView.layer.zPosition < alterNavigationView.layer.zPosition{
+                        alterNavigationView.layer.zPosition = 0
+                        alterNavHeight.constant = 107
+                        backButtonTop.constant = 30
+                        titleHeaderTop.constant = 104
+                        
+                    }
+                    
+                }else {
+                    if headerImageView.layer.zPosition >= alterNavigationView.layer.zPosition{
+                        alterNavigationView.layer.zPosition = 2
+                        backButton.layer.zPosition = 3
+                        alterNavHeight.constant = 120
+                        backButtonTop.constant = 43
+                        titleHeaderTop.constant = 117
+                        
+                    }
                 }
             }
+            
+            // Apply Transformations
+            alterNavigationView.layer.transform = headerTransform
         }
-        
-        // Apply Transformations
-        alterNavigationView.layer.transform = headerTransform
     }
     
 }

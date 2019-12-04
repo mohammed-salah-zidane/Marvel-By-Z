@@ -19,8 +19,6 @@
 		FA72A8FD23971DBF000AC400 /* URLsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA72A8FB23971DBF000AC400 /* URLsCell.xib */; };
 		FA72A9012397226A000AC400 /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72A8FF2397226A000AC400 /* LinkCell.swift */; };
 		FA72A9022397226A000AC400 /* LinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA72A9002397226A000AC400 /* LinkCell.xib */; };
-		FA72A90723973378000AC400 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72A90623973378000AC400 /* FXBlurView.m */; };
-		FA72A909239749D5000AC400 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA72A908239749D4000AC400 /* Device.swift */; };
 		FA80824123944B4D0083AA8F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80824023944B4D0083AA8F /* SplashViewController.swift */; };
 		FA80824323944B690083AA8F /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80824223944B690083AA8F /* Commons.swift */; };
 		FA80824523944C1B0083AA8F /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA80824423944C1B0083AA8F /* NavigationManager.swift */; };
@@ -37,6 +35,8 @@
 		FA8082632395458A0083AA8F /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA808261239545890083AA8F /* ResultsCell.swift */; };
 		FA8082642395458A0083AA8F /* ResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA808262239545890083AA8F /* ResultsCell.xib */; };
 		FAB311A32395B56B003AE626 /* CharacterDetialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB311A22395B56B003AE626 /* CharacterDetialsViewController.swift */; };
+		FAECB7F12397E22900FA3048 /* LoadingIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECB7F02397E22900FA3048 /* LoadingIndicatorManager.swift */; };
+		FAECB7F32397E66D00FA3048 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECB7F22397E66D00FA3048 /* Reachability.swift */; };
 		FAF93C3D23943FAA00122589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF93C3C23943FAA00122589 /* AppDelegate.swift */; };
 		FAF93C3F23943FAA00122589 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF93C3E23943FAA00122589 /* HomeViewController.swift */; };
 		FAF93C4223943FAA00122589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF93C4023943FAA00122589 /* Main.storyboard */; };
@@ -59,10 +59,6 @@
 		FA72A8FB23971DBF000AC400 /* URLsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = URLsCell.xib; sourceTree = "<group>"; };
 		FA72A8FF2397226A000AC400 /* LinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
 		FA72A9002397226A000AC400 /* LinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkCell.xib; sourceTree = "<group>"; };
-		FA72A90423973377000AC400 /* Marvel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Marvel-Bridging-Header.h"; sourceTree = "<group>"; };
-		FA72A90523973378000AC400 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
-		FA72A90623973378000AC400 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
-		FA72A908239749D4000AC400 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		FA80824023944B4D0083AA8F /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		FA80824223944B690083AA8F /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		FA80824423944C1B0083AA8F /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -79,6 +75,9 @@
 		FA808261239545890083AA8F /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		FA808262239545890083AA8F /* ResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsCell.xib; sourceTree = "<group>"; };
 		FAB311A22395B56B003AE626 /* CharacterDetialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetialsViewController.swift; sourceTree = "<group>"; };
+		FAECB7EE2397CEC100FA3048 /* Marvel-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Marvel-Bridging-Header.h"; sourceTree = "<group>"; };
+		FAECB7F02397E22900FA3048 /* LoadingIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorManager.swift; sourceTree = "<group>"; };
+		FAECB7F22397E66D00FA3048 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FAF93C3923943FAA00122589 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF93C3C23943FAA00122589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF93C3E23943FAA00122589 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -155,16 +154,6 @@
 			path = linkCell;
 			sourceTree = "<group>";
 		};
-		FA72A9032397334B000AC400 /* FXBlur */ = {
-			isa = PBXGroup;
-			children = (
-				FA72A90523973378000AC400 /* FXBlurView.h */,
-				FA72A90623973378000AC400 /* FXBlurView.m */,
-				FA72A90423973377000AC400 /* Marvel-Bridging-Header.h */,
-			);
-			path = FXBlur;
-			sourceTree = "<group>";
-		};
 		FA8082392394479C0083AA8F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,11 +166,12 @@
 		FA80823A239447A70083AA8F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FA72A9032397334B000AC400 /* FXBlur */,
+				FAECB7EF2397CEE100FA3048 /* FXBlur */,
+				FAECB7F22397E66D00FA3048 /* Reachability.swift */,
 				FA80824223944B690083AA8F /* Commons.swift */,
 				FA80824423944C1B0083AA8F /* NavigationManager.swift */,
 				FA8082572394ED230083AA8F /* md5.swift */,
-				FA72A908239749D4000AC400 /* Device.swift */,
+				FAECB7F02397E22900FA3048 /* LoadingIndicatorManager.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -281,6 +271,14 @@
 				FAB311A22395B56B003AE626 /* CharacterDetialsViewController.swift */,
 			);
 			path = "Character Details";
+			sourceTree = "<group>";
+		};
+		FAECB7EF2397CEE100FA3048 /* FXBlur */ = {
+			isa = PBXGroup;
+			children = (
+				FAECB7EE2397CEC100FA3048 /* Marvel-Bridging-Header.h */,
+			);
+			path = FXBlur;
 			sourceTree = "<group>";
 		};
 		FAF93C3023943FAA00122589 = {
@@ -443,7 +441,6 @@
 				FA6579342396C7D400DF004A /* String.swift in Sources */,
 				FA808252239452910083AA8F /* UIImageView.swift in Sources */,
 				FA808254239452910083AA8F /* TableViewExtensions.swift in Sources */,
-				FA72A90723973378000AC400 /* FXBlurView.m in Sources */,
 				FA72A8FC23971DBF000AC400 /* URLsCell.swift in Sources */,
 				FA80824323944B690083AA8F /* Commons.swift in Sources */,
 				FA72A9012397226A000AC400 /* LinkCell.swift in Sources */,
@@ -461,8 +458,9 @@
 				FA72A8F82396F3E1000AC400 /* ItemImageModel.swift in Sources */,
 				FA808253239452910083AA8F /* UIView.swift in Sources */,
 				FA8082632395458A0083AA8F /* ResultsCell.swift in Sources */,
+				FAECB7F12397E22900FA3048 /* LoadingIndicatorManager.swift in Sources */,
+				FAECB7F32397E66D00FA3048 /* Reachability.swift in Sources */,
 				FA80824523944C1B0083AA8F /* NavigationManager.swift in Sources */,
-				FA72A909239749D5000AC400 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

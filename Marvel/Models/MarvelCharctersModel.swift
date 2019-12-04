@@ -9,7 +9,6 @@
 
 import Foundation
 import UIKit
-import Realm
 struct MarvelCharctersModel : Codable {
     let data : CharactersData?
     let status : String?
@@ -130,7 +129,7 @@ struct Items : Codable {
     let type : String?
     let resourceURI : String?
     let name : String?
-
+    
     var url :String?{
         let path = self.resourceURI?.subString(from: 0, to: (self.resourceURI!.count) - 3)
         let imageExtension = self.resourceURI?.subString(from: (self.resourceURI!.count) - 3, to: (self.resourceURI!.count) )
@@ -212,4 +211,34 @@ struct Urls : Codable {
         url = try values.decodeIfPresent(String.self, forKey: .url)
     }
     
+}
+
+
+//set, get & remove Marvel Chache Characters in cache
+struct MarvelCharactersChacheManager{
+    static let key = "responseChache"
+    static func chacheValue(_ value: [MarvelCharacter]!) {
+        DispatchQueue.main.async {
+            do {
+                UserDefaults.standard.set(try PropertyListEncoder().encode(value), forKey: key)
+            }catch{
+                print("save failed",error)
+            }
+        }
+    }
+    static func getChechedValue() -> [MarvelCharacter]? {
+        var marvelCharacters: [MarvelCharacter]!
+        if let data = UserDefaults.standard.value(forKey: key) as? Data {
+                marvelCharacters = try? PropertyListDecoder().decode([MarvelCharacter].self, from: data)
+            return marvelCharacters!
+        } else {
+            return nil
+        }
+        
+    }
+    static func removePreviousChache() {
+        DispatchQueue.main.async {
+            UserDefaults.standard.removeObject(forKey: key)
+        }
+    }
 }

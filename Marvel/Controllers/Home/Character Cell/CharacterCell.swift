@@ -9,15 +9,23 @@
 import UIKit
 
 class CharacterCell: UITableViewCell {
-
+    
     @IBOutlet weak var charcterNameLabel: UILabel!
     @IBOutlet weak var charcterImageView: UIImageView!
     
     var marvelCharacter:MarvelCharacter?{
         didSet{
-            charcterImageView.nuke(url: self.marvelCharacter?.thumbnail!.url, {_ in})
-            print((self.marvelCharacter?.thumbnail!.path!)! + "\(self.marvelCharacter!.thumbnail!.x_tension!)")
-            charcterNameLabel.text = self.marvelCharacter?.name
+            //MARK:- load image
+            DispatchQueue.main.async { 
+                self.charcterImageView.nuke(url: self.marvelCharacter?.thumbnail!.url, { [weak self] succss  in
+                    guard let self = self else {return}
+                    if !succss {
+                        //when fail to load image assign no available image
+                        self.charcterImageView.image = #imageLiteral(resourceName: "image_not_available")
+                    }
+                })
+                self.charcterNameLabel.text = self.marvelCharacter?.name
+            }
         }
     }
     override func awakeFromNib() {

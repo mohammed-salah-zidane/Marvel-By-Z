@@ -9,7 +9,7 @@
 import UIKit
 
 class CharctersSectionsCell: UITableViewCell {
-
+    
     @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var sectionTitleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -35,7 +35,7 @@ class CharctersSectionsCell: UITableViewCell {
         super.awakeFromNib()
         initCollectionView()
     }
-    
+    //MARK:- init collection view and register cells
     func initCollectionView(){
         collectionView.registerCellNib(cellClass: CharacterItemCell.self)
         collectionView.delegate = self
@@ -43,6 +43,7 @@ class CharctersSectionsCell: UITableViewCell {
     }
     
 }
+//MARK: - Conform CollectionView Delegate, Datasource
 extension CharctersSectionsCell:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters?.count ?? 0
@@ -58,6 +59,8 @@ extension CharctersSectionsCell:UICollectionViewDelegate,UICollectionViewDataSou
         return cell
     }
 }
+
+//MARK: - Conform CollectionView FlowLayout delegate
 extension CharctersSectionsCell:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.width / 3.4) - 15, height: collectionView.frame.height)

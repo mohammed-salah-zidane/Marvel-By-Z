@@ -9,7 +9,7 @@
 import UIKit
 
 class CharacterItemCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterImageView: UIImageView!
     
@@ -22,19 +22,19 @@ class CharacterItemCell: UICollectionViewCell {
                 resourceType = .comics(id: self.item!.id ?? 0)
             }else if section == "SERIES" {
                 resourceType = .series(id: self.item!.id ?? 0 )
-            
+                
             }else if section == "STORIES"{
                 resourceType = .stories(id: self.item!.id ?? 0)
             }else if section == "EVENTS"{
                 resourceType = .events(id: self.item?.id ?? 0)
             }
-            //print("comicn",self.item!.id)
             DispatchQueue.main.async {
+                //MARK:- load image
                 Router.shared.fetchImageUrl(resourceType: resourceType, { (success, url) in
                     if success {
-                        print((self.item?.resourceURI!)!)
                         self.characterImageView.nuke(url:  url, {_ in})
-                    }else {
+                    }else{
+                        //when fail to load image assign no available image
                         self.characterImageView.image = #imageLiteral(resourceName: "image_not_available")
                     }
                 })
@@ -46,5 +46,5 @@ class CharacterItemCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
 }

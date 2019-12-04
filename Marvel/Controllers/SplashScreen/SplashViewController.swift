@@ -30,6 +30,7 @@ class SplashViewController: UIViewController {
     }
 }
 extension SplashViewController {
+    //MARK:- show home screen
     func showHomeScreen(){
         NavigationManager.navigateToHomeScreen(self)
     }

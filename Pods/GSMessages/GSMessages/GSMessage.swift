@@ -236,7 +236,6 @@ public class GSMessage: NSObject {
     public private(set) var containerView = UIView()
     public private(set) var messageView = UIView()
     public private(set) var messageText = UILabel()
-    
     public private(set) var animations: [GSMessageAnimation] = [.slide(.normal)]
     public private(set) var animationDuration: TimeInterval = 0.25
     public private(set) var autoHide: Bool = true

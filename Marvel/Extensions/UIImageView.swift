@@ -25,7 +25,6 @@ extension UIImageView{
                 placeholder: .scaleAspectFill
             )
         )
-        
         if let URL = URL(string: url!) {
             DispatchQueue.main.async {
                 Nuke.loadImage(with: ImageRequest(url: URL), options: options, into: self, progress: nil) { (result) in
